@@ -1,0 +1,134 @@
+#include <GL/glut.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#define PI 3.1415
+
+int CX=250;
+int CY=250;
+//float angle = 45;
+
+void myinit() //set attributes
+{
+    glClearColor(0.80f,0.80f,0.80f,0.80f); //  setting background color
+    glColor3f(1.0f,0.0f,0.0f); // drawing color
+
+    // Set world coordinates
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(0,1366,-768,0);
+    glMatrixMode(GL_MODELVIEW);
+}
+
+void display()
+{
+        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+        //background();
+        glColor3f(0.25,0.25,0.55);
+        room();
+        glColor3f(1,0,0);
+        crosshair();
+        glutSwapBuffers();
+}
+
+void crosshair()
+{
+ //   glClear(GL_COLOR_BUFFER_BIT); // clear the background
+
+    glBegin(GL_LINES);              // up line
+        glVertex2f( CX , CY );
+        glVertex2f( CX , CY+30 );
+    glEnd();
+    glBegin(GL_LINES);              // right
+        glVertex2f( CX , CY );
+        glVertex2f( CX-30 , CY );
+    glEnd();
+    glBegin(GL_LINES);              //left line
+        glVertex2f( CX , CY );
+        glVertex2f( CX+30 , CY );
+    glEnd();
+    glBegin(GL_LINES);              // down line
+        glVertex2f( CX , CY );
+        glVertex2f( CX , CY-30 );
+    glEnd();
+
+   // glutSwapBuffers();
+
+}
+
+void background()
+{
+    //glClear(GL_COLOR_BUFFER_BIT); // clear the background
+    int x=50,y=-768;
+    for(int i=0;i<50;i++)
+    {
+        glColor3f(0.0,0.0,0.0);
+        glBegin(GL_LINES);
+        glVertex2f(x,-768);
+        glVertex2f(x,0);
+        glEnd();
+        x+=50;
+    }
+    for(int i=0;i<30;i++)
+    {
+        glColor3f(0.0,0.0,0.0);
+        glBegin(GL_LINES);
+        glVertex2f(0,y);
+        glVertex2f(1366,y);
+        glEnd();
+        y+=50;
+    }
+    glFlush();
+}
+
+void room()
+{
+    glPushMatrix();
+    glLoadIdentity();
+    glColor3f(0.25,0.25,0.55);
+    glBegin(GL_QUADS);
+    glVertex3f(300,-618,-300);
+    glVertex3f(1066,-618,-300);
+    glVertex3f(1066,-150,-300);
+    glVertex3f(300,-150,-300);
+    glPopMatrix();
+    glFlush();
+}
+
+void mypassive (int x,int y)
+{
+
+	CX = x;
+	CY = -1*y;
+    glutPostRedisplay();
+
+}
+
+
+//void Rotate_func (int ang)
+//{
+//	angle = angle + 10;
+//	glutTimerFunc(50, Rotate_func, 0);
+//	glutPostRedisplay();
+//}
+
+int main (int argc , char ** argv)
+{
+    glutInit(&argc,argv); // initialize GLUT
+    glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB); //setting display mode
+
+    glutInitWindowSize(1366,768); // window size
+    glutInitWindowPosition(0,0);  // window position
+
+    glutCreateWindow("AIM Trainer");
+
+    //glutDisplayFunc(background);
+    glutDisplayFunc(display); // Register callback func
+    glutPassiveMotionFunc(mypassive);
+ //   glutTimerFunc(50, Rotate_func, 0);
+    myinit(); // Set attributes
+    glutSetCursor(GLUT_CURSOR_NONE);
+    glutMainLoop(); // enter event Loop
+
+    return 0;
+}

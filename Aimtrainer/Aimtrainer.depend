@@ -1,0 +1,75 @@
+# depslib dependency file v1.0
+1597398044 source:e:\misc\comsats pdf's\comsats semester 5\computer graphics\new folder\aimtrainer\main.c
+	<GL/glut.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	<windows.h>
+	<string.h>
+	<unistd.h>
+	<pthread.h>
+	<string.h>
+
+1597398542 source:e:\behzad\computer graphics\lab\aimtrainer\main.c
+	<GL/glut.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	<windows.h>
+	<string.h>
+	<unistd.h>
+	<pthread.h>
+	<string.h>
+
+1418909075 source:e:\misc\comsats pdf's\comsats semester 5\computer graphics\new folder\aimtrainer\stb_image.c
+	"stb_image.h"
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1418909075 e:\misc\comsats pdf's\comsats semester 5\computer graphics\new folder\aimtrainer\stb_image.h
+	<stdio.h>
+
+1596812786 source:e:\misc\comsats pdf's\comsats semester 5\computer graphics\new folder\aimtrainer\src\texture.cpp
+	"Texture.h"
+
+1596813043 e:\misc\comsats pdf's\comsats semester 5\computer graphics\new folder\aimtrainer\include\texture.h
+	<GL/glut.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<string>
+
+1418909075 source:c:\users\gng\desktop\stb_image.c
+	"stb_image.h"
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1418909075 c:\users\gng\desktop\stb_image.h
+	<stdio.h>
+
+1418909075 source:e:\behzad\computer graphics\lab\aimtrainer\stb_image.c
+	"stb_image.h"
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1418909075 e:\behzad\computer graphics\lab\aimtrainer\stb_image.h
+	<stdio.h>
+
